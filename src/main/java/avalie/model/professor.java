@@ -1,6 +1,4 @@
-package org.example.model;
-import dev.morphia.annotations.Entity;
-import dev.morphia.annotations.Id;
+package avalie.model;
 import org.bson.types.ObjectId;
 
 import java.util.Objects;
