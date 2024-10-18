@@ -6,7 +6,6 @@ import avalie.repository.ProfessorRepository;
 import java.util.List;
 
 public class ProfessorService {
-
     private ProfessorRepository professorRepository = new ProfessorRepository();
 
     public List<Professor> getAllProfessors() {

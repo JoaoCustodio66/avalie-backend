@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProfessorRepository {
+
     public List<Professor> findAllProfessors() {
         List<Professor> professores = new ArrayList<>();
 
