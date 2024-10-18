@@ -4,14 +4,14 @@ import org.bson.types.ObjectId;
 
 import java.util.Objects;
 
-public class usuario {
+public class Usuario {
     private ObjectId id;
     private ObjectId id_usuario;
     private String senha;
 
-    public usuario(){}
+    public Usuario(){}
 
-    public usuario(ObjectId id, ObjectId id_usuario, String senha) {
+    public Usuario(ObjectId id, ObjectId id_usuario, String senha) {
         this.id = id;
         this.id_usuario = id_usuario;
         this.senha = senha;
@@ -45,7 +45,7 @@ public class usuario {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        usuario usuario = (usuario) o;
+        Usuario usuario = (Usuario) o;
         return Objects.equals(id, usuario.id) && Objects.equals(id_usuario, usuario.id_usuario) && Objects.equals(senha, usuario.senha);
     }
 

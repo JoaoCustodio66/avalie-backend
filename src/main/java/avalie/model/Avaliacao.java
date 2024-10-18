@@ -5,7 +5,7 @@ import org.bson.types.ObjectId;
 import java.util.Date;
 import java.util.Objects;
 
-public class avaliacao {
+public class Avaliacao {
     private ObjectId id;
     private String text;
     private int nota;
@@ -13,9 +13,9 @@ public class avaliacao {
     private ObjectId id_aula;
     private Date data;
 
-    public avaliacao(){}
+    public Avaliacao(){}
 
-    public avaliacao(ObjectId id, String text, int nota, ObjectId id_aluno, ObjectId id_aula, Date data) {
+    public Avaliacao(ObjectId id, String text, int nota, ObjectId id_aluno, ObjectId id_aula, Date data) {
         this.id = id;
         this.text = text;
         this.nota = nota;
@@ -76,7 +76,7 @@ public class avaliacao {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        avaliacao avaliacao = (avaliacao) o;
+        Avaliacao avaliacao = (Avaliacao) o;
         return nota == avaliacao.nota && Objects.equals(id, avaliacao.id) && Objects.equals(text, avaliacao.text) && Objects.equals(id_aluno, avaliacao.id_aluno) && Objects.equals(id_aula, avaliacao.id_aula) && Objects.equals(data, avaliacao.data);
     }
 

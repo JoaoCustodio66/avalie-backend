@@ -4,14 +4,14 @@ import org.bson.types.ObjectId;
 
 import java.util.Objects;
 
-public class curso {
+public class Curso {
     private ObjectId id;
     private String descricao;
     private Boolean ativo;
 
-    public curso (){}
+    public Curso(){}
 
-    public curso(ObjectId id, String descricao, Boolean ativo) {
+    public Curso(ObjectId id, String descricao, Boolean ativo) {
         this.id = id;
         this.descricao = descricao;
         this.ativo = ativo;
@@ -45,7 +45,7 @@ public class curso {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        curso curso = (curso) o;
+        Curso curso = (Curso) o;
         return Objects.equals(id, curso.id) && Objects.equals(descricao, curso.descricao) && Objects.equals(ativo, curso.ativo);
     }
 

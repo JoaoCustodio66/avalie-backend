@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
-public class aula {
+public class Aula {
     private ObjectId id;
     private String descricao;
     private ObjectId id_professor;
@@ -15,10 +15,10 @@ public class aula {
     private List<String> dias_semana;
 
 
-    public aula() {
+    public Aula() {
     }
 
-    public aula(String descricao, ObjectId id_professor, Date horario_inicio, Date horario_fim, List<String> dias_semana) {
+    public Aula(String descricao, ObjectId id_professor, Date horario_inicio, Date horario_fim, List<String> dias_semana) {
         this.descricao = descricao;
         this.id_professor = id_professor;
         this.horario_inicio = horario_inicio;
@@ -78,7 +78,7 @@ public class aula {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        aula aula = (aula) o;
+        Aula aula = (Aula) o;
         return Objects.equals(id, aula.id) && Objects.equals(descricao, aula.descricao) && Objects.equals(id_professor, aula.id_professor) && Objects.equals(horario_inicio, aula.horario_inicio) && Objects.equals(horario_fim, aula.horario_fim) && Objects.equals(dias_semana, aula.dias_semana);
     }
 

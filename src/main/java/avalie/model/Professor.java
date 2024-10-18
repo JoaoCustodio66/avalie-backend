@@ -3,15 +3,15 @@ import org.bson.types.ObjectId;
 
 import java.util.Objects;
 
-public class professor {
+public class Professor {
     private ObjectId id;
     private String nome;
     private String email;
     private String telefone;
 
-    public professor(){}
+    public Professor(){}
 
-    public professor(ObjectId id, String nome, String email, String telefone){
+    public Professor(ObjectId id, String nome, String email, String telefone){
         this.id = id;
         this.nome = nome;
         this.email = email;
@@ -54,7 +54,7 @@ public class professor {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        professor professor = (professor) o;
+        Professor professor = (Professor) o;
         return Objects.equals(id, professor.id) && Objects.equals(nome, professor.nome) && Objects.equals(email, professor.email) && Objects.equals(telefone, professor.telefone);
     }
 

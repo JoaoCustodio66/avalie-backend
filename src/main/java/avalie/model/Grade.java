@@ -5,7 +5,7 @@ import org.bson.types.ObjectId;
 import java.util.List;
 import java.util.Objects;
 
-public class grade {
+public class Grade {
     private ObjectId id;
     private int semestre;
     private ObjectId curso;
@@ -13,9 +13,9 @@ public class grade {
     private String turma;
     private List<ObjectId> disciplinas;
 
-    public grade(){}
+    public Grade(){}
 
-    public grade(ObjectId id, int semestre, ObjectId curso, int ano, String turma, List<ObjectId> disciplinas) {
+    public Grade(ObjectId id, int semestre, ObjectId curso, int ano, String turma, List<ObjectId> disciplinas) {
         this.id = id;
         this.semestre = semestre;
         this.curso = curso;
@@ -76,7 +76,7 @@ public class grade {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        grade grade = (grade) o;
+        Grade grade = (Grade) o;
         return semestre == grade.semestre && ano == grade.ano && Objects.equals(id, grade.id) && Objects.equals(curso, grade.curso) && Objects.equals(turma, grade.turma) && Objects.equals(disciplinas, grade.disciplinas);
     }
 

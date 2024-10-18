@@ -1,7 +1,7 @@
 package avalie.repository;
 
 import avalie.config.MongoDBConnection;
-import avalie.model.professor;
+import avalie.model.Professor;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import org.bson.Document;
@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProfessorRepository {
-    public List<professor> findAllProfessors() {
-        List<professor> professores = new ArrayList<>();
+    public List<Professor> findAllProfessors() {
+        List<Professor> professores = new ArrayList<>();
 
         MongoCollection<Document> collection = MongoDBConnection.getDatabase().getCollection("professores");
 
@@ -20,7 +20,7 @@ public class ProfessorRepository {
         try {
             while (cursor.hasNext()) {
                 Document doc = cursor.next();
-                professor prof = new professor(
+                Professor prof = new Professor(
                         doc.getObjectId("_id"),
                         doc.getString("nome"),
                         doc.getString("email"),
