@@ -9,31 +9,23 @@ import org.bson.Document;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AlunoRepository {
+public interface AlunoRepository {
+    static MongoCollection<Document> collection = MongoDBConnection.getDatabase().getCollection("alunos");
 
-    public List<Aluno> findAllAlunos(){
-        List<Aluno> alunos = new ArrayList<>();
-
-        MongoCollection<Document> collection = MongoDBConnection.getDatabase().getCollection("alunos");
-
-        MongoCursor<Document> cursor = collection.find().iterator();
-
-        try{
-            while(cursor.hasNext()){
-                Document doc = cursor.next();
-                Aluno aluno = new Aluno(doc.getObjectId("_id"),
-                        doc.getString("nome"),
-                        doc.getString("ra"),
-                        doc.getString("email"),
-                        doc.getString("telefone"),
-                        doc.getObjectId("id_curso"),
-                        doc.getObjectId("id_grade"),
-                        doc.getBoolean("ativo"));
-                alunos.add(aluno);
-            }
-        }finally {
-            cursor.close();
-        }
-        return alunos;
+    default Object save(Document document){
+        return collection.insertOne(document);
     }
+    //findAll
+    default List<Document> findAll() {
+        List<Document> students = new ArrayList<>();
+        try (MongoCursor<Document> cursor = collection.find().iterator()) {
+            while (cursor.hasNext()) {
+                students.add(cursor.next());
+            }
+        }
+        return students;
+    }
+    //findById
+    //updateById
+    //deleteById
 }
