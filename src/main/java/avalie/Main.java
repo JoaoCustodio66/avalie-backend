@@ -24,7 +24,6 @@ public class Main {
         String cursoIdString = "67118bc0201887baab936d4f"; // ID do curso
         String gradeIdString = "67118a27201887baab936d4e"; // ID da grade
 
-        // Converter as strings para ObjectId
         ObjectId cursoId = new ObjectId(cursoIdString);
         ObjectId gradeId = new ObjectId(gradeIdString);
         Document student= new Document()
@@ -39,6 +38,18 @@ public class Main {
         //alunoController.createStudent(student);
         Object alunos = alunoController.getAllStudents();
         System.out.println(alunos.toString());
+        //teste buscar por RA
+        Object aluno= alunoController.getStudentByRA("22000115");
+        System.out.println(aluno.toString());
+        //teste buscar por Id
+        Object alunoid=alunoController.getStudentById("6712ba693bb2d7661666a04a");
+        System.out.println(alunoid.toString());
+        //teste par buscar por curso
+        Object alunocurso= alunoController.getStudentsByCourse("Engenharia de Software");
+        System.out.println(alunocurso.toString());
+        //teste buscar por Grase
+        //Object alunograde=alunoController.getStudentByGrid("6712ba693bb2d7661666a04a");
+        //System.out.println(alunograde.toString());
     }
 }
 

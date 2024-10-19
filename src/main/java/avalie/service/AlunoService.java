@@ -23,9 +23,36 @@ public class AlunoService {
         try{
             return alunoRepository.findAll();
         }catch (Exception e){
-            throw new Exception("Error when retrieving students: " + e.getMessage());
+            throw new Exception("Error when searching for studens: " + e.getMessage());
         }
     }
-
+    public Document getStudentByRA(String ra) throws Exception{
+        try{
+            return alunoRepository.findByRA(ra);
+        }catch (Exception e){
+            throw new Exception("Error when searching for student: " + e.getMessage());
+        }
+    }
+    public Document getStudentById(String id) throws Exception{
+        try{
+            return alunoRepository.findById(id);
+        }catch (Exception e){
+            throw new Exception("Errow when searching for student: " + e.getMessage());
+        }
+    }
+    public List<Document> getStudentsByCourse(String course) throws Exception{
+        try{
+            return alunoRepository.findByCourse(course);
+        }catch (Exception e){
+            throw new Exception("Error when searching for studens: " + e.getMessage());
+        }
+    }
+    public Document getStudentByGrid(String idGrid) throws Exception{
+        try{
+            return alunoRepository.findByGrid(idGrid);
+        }catch (Exception e){
+            throw new Exception("Errow when searching for students: " + e.getMessage());
+        }
+    }
 
 }

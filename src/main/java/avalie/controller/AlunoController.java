@@ -22,15 +22,47 @@ public class AlunoController {
             alunoService.createStudent(document);
             System.out.println("Student successfully registered");
         }catch(Exception e){
-            throw new Exception("Error when registering new student");
+            throw new Exception("Error when searching for student");
         }
     }
     public List<Document> getAllStudents() throws Exception{
         try{
-            List<Document> alunos = alunoService.getAllStudents();
-            return alunos;
+            List<Document> students = alunoService.getAllStudents();
+            return students;
         }catch (Exception e){
-            throw new Exception("Error when retrieving students: " + e.getMessage());
+            throw new Exception("Error when searching for students: " + e.getMessage());
+        }
+    }
+    public Document getStudentByRA(String ra) throws Exception{
+        try{
+            Document student=alunoService.getStudentByRA(ra);
+            return student;
+        }catch (Exception e){
+            throw new Exception("Error when searching for students: " + e.getMessage());
+        }
+    }
+    public Document getStudentById(String id) throws Exception{
+        try{
+            Document student=alunoService.getStudentById(id);
+            return student;
+        }catch (Exception e){
+            throw new Exception("Error when searching for student: " + e.getMessage());
+        }
+    }
+    public List<Document> getStudentsByCourse(String course) throws Exception{
+        try{
+            List<Document> students=alunoService.getStudentsByCourse(course);
+            return students;
+        }catch (Exception e){
+            throw new Exception("Error when searching for student: " + e.getMessage());
+        }
+    }
+    public Document getStudentByGrid(String idGrid) throws Exception{
+        try{
+            Document students=alunoService.getStudentByGrid(idGrid);
+            return students;
+        }catch (Exception e){
+            throw new Exception("Error when searching for students: " + e.getMessage());
         }
     }
 }
