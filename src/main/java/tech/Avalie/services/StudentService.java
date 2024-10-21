@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import tech.Avalie.entities.Student;
 import tech.Avalie.repositories.StudentRepository;
 
+import java.util.List;
+
 @Service
 public class StudentService {
     private final StudentRepository studentRepository;
@@ -19,6 +21,14 @@ public class StudentService {
             return studentRepository.save(student);
         }catch (Exception e){
             throw new Exception("Error when registering students: " + e.getMessage());
+        }
+    }
+
+    public List<Student> listStudents() throws Exception{
+        try{
+            return studentRepository.findAll();
+        } catch (Exception e) {
+            throw new Exception("Error when list students: " + e.getMessage());
         }
     }
 }

@@ -1,12 +1,11 @@
 package tech.Avalie.controller;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import tech.Avalie.entities.Student;
 import tech.Avalie.services.StudentService;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/student")
@@ -25,4 +24,15 @@ public class StudentController {
             throw new Exception("Error when registering student: " + e.getMessage());
         }
     }
+    @GetMapping("/list")
+    public ResponseEntity<List<Student>> listStudent()throws Exception{
+        try{
+            List<Student> items = studentService.listStudents();
+            return ResponseEntity.ok().body(items);
+        } catch (Exception e) {
+            throw new Exception("Error when list students: " + e.getMessage());
+        }
+    }
+
+
 }
