@@ -4,6 +4,8 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Objects;
+
 
 @Document(collection = "alunos")
 public class Student {
@@ -91,6 +93,19 @@ public class Student {
 
     public void setAtivo(Boolean ativo) {
         this.ativo = ativo;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return Objects.equals(id, student.id) && Objects.equals(nome, student.nome) && Objects.equals(ra, student.ra) && Objects.equals(email, student.email) && Objects.equals(telefone, student.telefone) && Objects.equals(id_curso, student.id_curso) && Objects.equals(id_grade, student.id_grade) && Objects.equals(ativo, student.ativo);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, nome, ra, email, telefone, id_curso, id_grade, ativo);
     }
 
     @Override

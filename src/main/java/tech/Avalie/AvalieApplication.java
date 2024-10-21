@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class AvalieApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(AvalieApplication.class, args);
 	}
 
