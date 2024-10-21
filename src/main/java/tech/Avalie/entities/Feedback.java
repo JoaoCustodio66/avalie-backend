@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.Objects;
 
 @Document(collection = "avaliacoes")
-public class Avaliacao {
+public class Feedback {
     private String id;
     private String text;
     private int nota;
@@ -15,9 +15,9 @@ public class Avaliacao {
     private ObjectId id_aula;
     private Date data;
 
-    public Avaliacao(){}
+    public Feedback(){}
 
-    public Avaliacao(String id, String text, int nota, ObjectId id_aluno, ObjectId id_aula, Date data) {
+    public Feedback(String id, String text, int nota, ObjectId id_aluno, ObjectId id_aula, Date data) {
         this.id = id;
         this.text = text;
         this.nota = nota;
@@ -78,8 +78,8 @@ public class Avaliacao {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Avaliacao avaliacao = (Avaliacao) o;
-        return nota == avaliacao.nota && Objects.equals(id, avaliacao.id) && Objects.equals(text, avaliacao.text) && Objects.equals(id_aluno, avaliacao.id_aluno) && Objects.equals(id_aula, avaliacao.id_aula) && Objects.equals(data, avaliacao.data);
+        Feedback feedback = (Feedback) o;
+        return nota == feedback.nota && Objects.equals(id, feedback.id) && Objects.equals(text, feedback.text) && Objects.equals(id_aluno, feedback.id_aluno) && Objects.equals(id_aula, feedback.id_aula) && Objects.equals(data, feedback.data);
     }
 
     @Override

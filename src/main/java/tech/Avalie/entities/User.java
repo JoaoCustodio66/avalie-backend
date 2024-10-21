@@ -7,14 +7,14 @@ import java.util.Objects;
 
 
 @Document(collection = "usuarios")
-public class Usuario {
+public class User {
     private String id;
     private ObjectId id_usuario;
     private String senha;
 
-    public Usuario(){}
+    public User(){}
 
-    public Usuario(String id, ObjectId id_usuario, String senha) {
+    public User(String id, ObjectId id_usuario, String senha) {
         this.id = id;
         this.id_usuario = id_usuario;
         this.senha = senha;
@@ -48,8 +48,8 @@ public class Usuario {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Usuario usuario = (Usuario) o;
-        return Objects.equals(id, usuario.id) && Objects.equals(id_usuario, usuario.id_usuario) && Objects.equals(senha, usuario.senha);
+        User user = (User) o;
+        return Objects.equals(id, user.id) && Objects.equals(id_usuario, user.id_usuario) && Objects.equals(senha, user.senha);
     }
 
     @Override

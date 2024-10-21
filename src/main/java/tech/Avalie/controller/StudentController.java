@@ -19,7 +19,7 @@ public class StudentController {
     @PostMapping("/create")
     public ResponseEntity<Student> createStudent(@RequestBody Student student) throws Exception{
         try{
-            Student item=studentService.createStudent(student);
+            Student item = studentService.createStudent(student);
             return ResponseEntity.ok().body(item);
         }catch (Exception e){
             throw new Exception("Error when registering student: " + e.getMessage());

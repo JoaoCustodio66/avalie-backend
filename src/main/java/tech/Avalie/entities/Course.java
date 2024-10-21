@@ -3,19 +3,18 @@ package tech.Avalie.entities;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.Collection;
 import java.util.Objects;
 
 
 @Document(collection = "cursos")
-public class Curso {
+public class Course {
     @Id
     private String id;
     private String descricao;
     private Boolean ativo;
 
 
-    public Curso(String id, String descricao, Boolean ativo) {
+    public Course(String id, String descricao, Boolean ativo) {
         this.id = id;
         this.descricao = descricao;
         this.ativo = ativo;
@@ -49,8 +48,8 @@ public class Curso {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Curso curso = (Curso) o;
-        return Objects.equals(id, curso.id) && Objects.equals(descricao, curso.descricao) && Objects.equals(ativo, curso.ativo);
+        Course course = (Course) o;
+        return Objects.equals(id, course.id) && Objects.equals(descricao, course.descricao) && Objects.equals(ativo, course.ativo);
     }
 
     @Override

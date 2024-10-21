@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Document(collection = "aulas")
-public class Aula {
+public class Class {
     private String id;
     private String descricao;
     private ObjectId id_professor;
@@ -17,10 +17,10 @@ public class Aula {
     private List<String> dias_semana;
 
 
-    public Aula() {
+    public Class() {
     }
 
-    public Aula(String descricao, ObjectId id_professor, Date horario_inicio, Date horario_fim, List<String> dias_semana) {
+    public Class(String descricao, ObjectId id_professor, Date horario_inicio, Date horario_fim, List<String> dias_semana) {
         this.descricao = descricao;
         this.id_professor = id_professor;
         this.horario_inicio = horario_inicio;
@@ -80,8 +80,8 @@ public class Aula {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Aula aula = (Aula) o;
-        return Objects.equals(id, aula.id) && Objects.equals(descricao, aula.descricao) && Objects.equals(id_professor, aula.id_professor) && Objects.equals(horario_inicio, aula.horario_inicio) && Objects.equals(horario_fim, aula.horario_fim) && Objects.equals(dias_semana, aula.dias_semana);
+        Class aClass = (Class) o;
+        return Objects.equals(id, aClass.id) && Objects.equals(descricao, aClass.descricao) && Objects.equals(id_professor, aClass.id_professor) && Objects.equals(horario_inicio, aClass.horario_inicio) && Objects.equals(horario_fim, aClass.horario_fim) && Objects.equals(dias_semana, aClass.dias_semana);
     }
 
     @Override

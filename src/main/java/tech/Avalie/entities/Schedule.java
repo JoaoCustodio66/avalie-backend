@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Document(collection = "grades")
-public class Grade {
+public class Schedule {
     @Id
     private String id;
     private int semestre;
@@ -18,9 +18,9 @@ public class Grade {
     private String turma;
     private List<ObjectId> disciplinas;
 
-    public Grade(){}
+    public Schedule(){}
 
-    public Grade(String id, int semestre, ObjectId curso, int ano, String turma, List<ObjectId> disciplinas) {
+    public Schedule(String id, int semestre, ObjectId curso, int ano, String turma, List<ObjectId> disciplinas) {
         this.id = id;
         this.semestre = semestre;
         this.curso = curso;
@@ -81,8 +81,8 @@ public class Grade {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Grade grade = (Grade) o;
-        return semestre == grade.semestre && ano == grade.ano && Objects.equals(id, grade.id) && Objects.equals(curso, grade.curso) && Objects.equals(turma, grade.turma) && Objects.equals(disciplinas, grade.disciplinas);
+        Schedule schedule = (Schedule) o;
+        return semestre == schedule.semestre && ano == schedule.ano && Objects.equals(id, schedule.id) && Objects.equals(curso, schedule.curso) && Objects.equals(turma, schedule.turma) && Objects.equals(disciplinas, schedule.disciplinas);
     }
 
     @Override
